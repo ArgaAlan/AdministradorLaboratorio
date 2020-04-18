@@ -3,7 +3,7 @@
 $materiales = find_all_materials();
 ?>
 <?php $page_title = 'Materiales'; ?>
-<?php include('../functions/pages/staff_header.php'); ?>
+<?php include(PAGES_PATH . '/staff_header.php'); ?>
 <div id="materiales">
 
     <table class="list">
@@ -23,4 +23,4 @@ $materiales = find_all_materials();
     </table>
 </div>
 
-<?php include('../functions/pages/staff_footer.php'); ?>
+<?php include(PAGES_PATH . '/staff_footer.php'); ?>
