@@ -15,6 +15,12 @@ $materiales = find_by_column("material", "codigo_barras", $id);
 <!--INITIALIZE FOR THIS PAGE-->
 
 <?php
+if (array_key_exists('update', $_POST)) {
+    redirect_to("materiales_act.php?id=" . $id);
+}
+?>
+
+<?php
 if (array_key_exists('delete', $_POST)) {
     delete("material", $id);
     redirect_to("materiales.php");
@@ -32,7 +38,8 @@ function delete($table, $value)
 ?>
 
 <form method="post">
-    <input type="submit" name="delete" class="button" value="Delete" />
+    <input type="submit" name="update" class="button" value="Actualizar información" />
+    <input type="submit" name="delete" class="button" value="Eliminar Material" />
 </form>
 
 <div id="materiales">
