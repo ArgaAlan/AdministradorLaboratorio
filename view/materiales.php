@@ -7,6 +7,15 @@ $materiales = find_all_materials();
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 <!--INITIALIZE FOR THIS PAGE-->
 
+<div id="nuevo_material">
+    <h1>Nuevo Material</h1>
+    <form action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
+        <div id="operations">
+            <input type="submit" value="Nuevo material" />
+        </div>
+    </form>
+</div>
+
 <div id="buscar_material_nombre">
     <h1>Buscar material por nombre</h1>
     <form action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">

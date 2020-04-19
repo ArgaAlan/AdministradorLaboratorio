@@ -4,7 +4,7 @@
 $id = $_GET['id'] ?? '';
 
 if (strcmp($id, "") == 0) {
-    redirect_to("meteriales.php");
+    redirect_to("materiales.php");
 }
 
 $materiales = find_by_column("material", "codigo_barras", $id);

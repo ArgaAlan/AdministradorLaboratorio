@@ -55,7 +55,7 @@ if (strcmp($busqueda, "codigo_barras") == 0) {
             echo "<td>" . $material['codigo_barras'] . "</td>";
             echo "<td>" . $material['nombre'] . "</td>";
             echo "<td><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
-            echo "<td><a href=materiales_info.php?id=" . $material['codigo_barras'] . "Más información</a></td>";
+            echo "<td><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
             echo "</tr>";
         }
         if ($imprimio == 0) {
