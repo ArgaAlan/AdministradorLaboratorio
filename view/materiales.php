@@ -37,11 +37,9 @@ $materiales = find_all_materials();
 
         <!-- Agregar material -->
         <div class="col">
-            <div class="col">
-                <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo material">Nuevo Material</button>
-                </form>
-            </div>
+            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo material">Nuevo Material</button>
+            </form>
         </div>
     </div>
     <!-- BOTONES -->
