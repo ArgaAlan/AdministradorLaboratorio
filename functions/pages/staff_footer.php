@@ -1,5 +1,5 @@
 <footer>
-  <?php echo date('Y'); ?> Laboratorio
+  <center><?php echo date('Y'); ?> Laboratorio</center>
 </footer>
 
 </body>

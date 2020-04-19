@@ -7,6 +7,32 @@ $materiales = find_all_materials();
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 <!--INITIALIZE FOR THIS PAGE-->
 
+<div id="buscar_material_nombre">
+    <h1>Buscar material por nombre</h1>
+    <form action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
+        <dl>
+            <dt>Nombre</dt>
+            <dd><input type="text" name="nombre" /></dd>
+        </dl>
+        <div id="operations">
+            <input type="submit" />
+        </div>
+    </form>
+</div>
+
+<div id="buscar_material_codigo">
+    <h1>Buscar material por codigo de barras</h1>
+    <form action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
+        <dl>
+            <dt>Codigo de Barras</dt>
+            <dd><input type="text" name="codigo_barras" /></dd>
+        </dl>
+        <div id="operations">
+            <input type="submit" />
+        </div>
+    </form>
+</div>
+
 <div id="materiales">
     <h1>Lista de materiales</h1>
     <table class="list">
