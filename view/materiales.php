@@ -40,15 +40,29 @@ $materiales = find_all_materials();
             <th>Codigo de barras</th>
             <th>Nombre</th>
             <th>Foto</th>
+            <th>Info</th>
         </tr>
 
-        <?php while ($material = mysqli_fetch_assoc($materiales)) { ?>
-            <tr>
-                <td><?php echo h($material['codigo_barras']); ?></td>
-                <td><?php echo h($material['nombre']); ?></td>
-                <td><?php echo "<img src=\"" . h($material['foto']) . "\" alt=\"Image\" height=\"42\" width=\"42\">"; ?></td>
-            </tr>
-        <?php } ?>
+        <?php
+        $imprimio = 0;
+        while ($material = mysqli_fetch_assoc($materiales)) {
+            $imprimio = 1;
+            echo "<tr>";
+            echo "<td>" . $material['codigo_barras'] . "</td>";
+            echo "<td>" . $material['nombre'] . "</td>";
+            echo "<td><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
+            echo "<td><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
+            echo "</tr>";
+        }
+        if ($imprimio == 0) {
+            echo "<tr>";
+            echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
+            echo "<td>&nbsp;</td>";
+            echo "<td>&nbsp;</td>";
+            echo "<td>&nbsp;</td>";
+            echo "</tr>";
+        }
+        ?>
     </table>
 </div>
 
