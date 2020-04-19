@@ -22,15 +22,39 @@ function createMat($table, $codigo, $nombre, $foto)
 }
 ?>
 
-<form name="form" action="" method="post">
-    <ul>
-        <li>Codigo de barras: <input type="text" name="codigo" id="codigo" value=""></li>
-        <li>Nombre: <input type="text" name="nombre" id="nombre" value=""></li>
-        <li>Foto URL: <input type="text" name="url" id="url" value=""></li>
-    </ul>
+<br>
 
-    <input type="submit" name="create" class="button" value="Agregar" />
-</form>
+<div class="container">
+
+    <!--Formulario-->
+
+    <div class="row">
+        <form name="form" method="post">
+            <div class="form-group row">
+                <label class="col col-form-label">Codigo de barras:</label>
+                <div class="col">
+                    <input class="form-control" name="codigo" placeholder="Codigo de barras">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col col-form-label">Nombre:</label>
+                <div class="col">
+                    <input class="form-control" name="nombre" placeholder="Nombre">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col col-form-label">Foto URL:</label>
+                <div class="col">
+                    <input class="form-control" name="url" placeholder="URL">
+                </div>
+            </div>
+            <button type="submit" name="create" class="btn btn-primary">Agregar</button>
+        </form>
+    </div>
+
+    <!--Formulario-->
+
+</div>
 
 <!--INITIALIZE FOR THIS PAGE-->
 <?php include(PAGES_PATH . '/staff_footer.php'); ?>

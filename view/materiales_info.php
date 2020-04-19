@@ -36,61 +36,84 @@ function delete($table, $value)
     return $result;
 }
 ?>
+<br>
+<div class="container">
+    <!--Botones-->
+    <div class="row">
 
-<form method="post">
-    <input type="submit" name="update" class="button" value="Actualizar información" />
-    <input type="submit" name="delete" class="button" value="Eliminar Material" />
-</form>
+        <form class="form-inline my-2 my-lg-0" method="post">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" name="update">Actualizar información</button>
+        </form>
 
-<div id="materiales">
-    <h1>Lista de materiales</h1>
-    <table class="list">
-        <tr>
-            <th>Campo</th>
-            <th>Información</th>
-        </tr>
+    </div>
+    <!--Botones-->
 
-        <?php
-        $imprimio = 0;
-        while ($material = mysqli_fetch_assoc($materiales)) {
-            $imprimio = 1;
-            echo "<tr>";
-            echo "<th>" . "Codigo de barras" . "</th>";
-            echo "<td><center>" . $material['codigo_barras'] . "</center></td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<th>" . "Nombre" . "</th>";
-            echo "<td><center>" . $material['nombre'] . "</center></td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<th>" . "Foto URL" . "</th>";
-            echo "<td><center>" . $material['foto'] . "</center></td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<th>" . "Foto" . "</th>";
-            echo "<td><center><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></center></td>";
-            echo "</tr>";
-        }
-        if ($imprimio == 0) {
-            echo "<tr>";
-            echo "<th>" . "Codigo de barras" . "</th>";
-            echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<th>" . "Nombre" . "</th>";
-            echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<th>" . "Foto" . "</th>";
-            echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
-            echo "</tr>";
-            echo "<tr>";
-            echo "<th>" . "Foto URL" . "</th>";
-            echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
+    <br>
+    <!-- TABLA -->
+
+    <div class="row">
+        <table class="table">
+
+            <tr class="table-primary">
+                <th>Campo</th>
+                <th>Información</th>
+            </tr>
+
+            <?php
+            $imprimio = 0;
+            while ($material = mysqli_fetch_assoc($materiales)) {
+                $imprimio = 1;
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Codigo de barras" . "</th>";
+                echo "<td>" . $material['codigo_barras'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Nombre" . "</th>";
+                echo "<td>" . $material['nombre'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Foto URL" . "</th>";
+                echo "<td>" . $material['foto'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Foto" . "</th>";
+                echo "<td><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
+                echo "</tr>";
+            }
+            if ($imprimio == 0) {
+
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Codigo de barras" . "</th>";
+                echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Nombre" . "</th>";
+                echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Foto" . "</th>";
+                echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Foto URL" . "</th>";
+                echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
+                echo "</tr>";
+            }
+            ?>
+        </table>
+    </div>
+
+    <!-- TABLA -->
+
+    <br>
+
+    <!--Botones-->
+    <div class="row">
+        <form class="form-inline my-2 my-lg-0" method="post">
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" name="delete">Eliminar Material</button>
+        </form>
+    </div>
+    <!--Botones-->
 </div>
 
 <!--INITIALIZE FOR THIS PAGE-->

@@ -20,7 +20,7 @@ if (strcmp($busqueda, '') == 0) {
 
 
 ?>
-
+<?php $page_title = 'Materiales'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 
 <?php
@@ -34,40 +34,66 @@ if (strcmp($busqueda, "codigo_barras") == 0) {
 }
 
 ?>
-<?php $page_title = 'Materiales'; ?>
 <!--INITIALIZE FOR THIS PAGE-->
 
-<div id="materiales">
-    <h1>Lista de materiales</h1>
-    <table class="list">
-        <tr>
-            <th>Codigo de barras</th>
-            <th>Nombre</th>
-            <th>Foto</th>
-            <th>&nbsp;</th>
-        </tr>
+<div class="container">
 
-        <?php
-        $imprimio = 0;
-        while ($material = mysqli_fetch_assoc($materiales)) {
-            $imprimio = 1;
-            echo "<tr>";
-            echo "<td>" . $material['codigo_barras'] . "</td>";
-            echo "<td>" . $material['nombre'] . "</td>";
-            echo "<td><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
-            echo "<td><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
-            echo "</tr>";
-        }
-        if ($imprimio == 0) {
-            echo "<tr>";
-            echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
-            echo "<td>&nbsp;</td>";
-            echo "<td>&nbsp;</td>";
-            echo "<td>&nbsp;</td>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
+    <br>
+    <center>
+        <h1>Lista de materiales</h1>
+    </center>
+    <br>
+
+    <!-- TABLA -->
+
+    <div class="row">
+        <table class="table">
+
+            <tr class="table-primary">
+                <th>Material</th>
+                <th>Codigo de barras</th>
+                <th>Nombre</th>
+                <th>Info</th>
+            </tr>
+
+            <?php
+            $imprimio = 0;
+            $row = 0;
+            while ($material = mysqli_fetch_assoc($materiales)) {
+                $imprimio = 1;
+                if ($row == 0) {
+                    echo "<tr>";
+                    echo "<td class=\"table-light\"><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
+                    echo "<td class=\"table-light\">" . $material['codigo_barras'] . "</td>";
+                    echo "<td class=\"table-light\">" . $material['nombre'] . "</td>";
+                    echo "<td class=\"table-light\"><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
+                    echo "</tr>";
+                    $row = 1;
+                } else {
+                    echo "<tr>";
+                    echo "<td class=\"table-secondary\"><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
+                    echo "<td class=\"table-secondary\">" . $material['codigo_barras'] . "</td>";
+                    echo "<td class=\"table-secondary\">" . $material['nombre'] . "</td>";
+                    echo "<td class=\"table-secondary\"><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
+                    echo "</tr>";
+                    $row = 0;
+                }
+            }
+            if ($imprimio == 0) {
+
+                echo "<tr>";
+                echo "<td class=\"table-light\">INFORMACIÓN NO ENCONTRADA</td>";
+                echo "<td class=\"table-light\">&nbsp;</td>";
+                echo "<td class=\"table-light\">&nbsp;</td>";
+                echo "<td class=\"table-light\">&nbsp;</td>";
+                echo "</tr>";
+            }
+            ?>
+        </table>
+    </div>
+
+    <!-- TABLA -->
+
 </div>
 
 
