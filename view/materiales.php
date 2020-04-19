@@ -83,11 +83,12 @@ $materiales = find_all_materials();
                 }
             }
             if ($imprimio == 0) {
+
                 echo "<tr>";
-                echo "<td>INFORMACIÓN NO ENCONTRADA</td>";
-                echo "<td>&nbsp;</td>";
-                echo "<td>&nbsp;</td>";
-                echo "<td>&nbsp;</td>";
+                echo "<td class=\"table-light\">INFORMACIÓN NO ENCONTRADA</td>";
+                echo "<td class=\"table-light\">&nbsp;</td>";
+                echo "<td class=\"table-light\">&nbsp;</td>";
+                echo "<td class=\"table-light\">&nbsp;</td>";
                 echo "</tr>";
             }
             ?>
