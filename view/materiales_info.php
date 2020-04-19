@@ -79,6 +79,42 @@ function delete($table, $value)
                 echo "<th>" . "Foto" . "</th>";
                 echo "<td><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
                 echo "</tr>";
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Marca" . "</th>";
+                echo "<td>" . $material['marca'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Modelo" . "</th>";
+                echo "<td>" . $material['modelo'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Especificaciones" . "</th>";
+                echo "<td>" . $material['especificaciones'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Indentificación Interna" . "</th>";
+                echo "<td>" . $material['identificacion_interna'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Almacen" . "</th>";
+                echo "<td>" . $material['almacen'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Ubicación" . "</th>";
+                echo "<td>" . $material['ubicacion'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Proveedor" . "</th>";
+                echo "<td>" . $material['proveedor'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Cantidad" . "</th>";
+                echo "<td>" . $material['cantidad'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-light\">";
+                echo "<th>" . "Observaciones" . "</th>";
+                echo "<td>" . $material['observaciones'] . "</td>";
+                echo "</tr>";
             }
             if ($imprimio == 0) {
 
