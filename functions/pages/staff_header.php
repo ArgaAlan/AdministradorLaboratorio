@@ -16,7 +16,7 @@ if (!isset($page_title)) {
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1B264F;">
     <img src="../src/logo.jpeg" width="100" height="30" class="d-inline-block align-top" alt="">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,14 +25,14 @@ if (!isset($page_title)) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="../index.php">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.php" style="color: #ffffff !IMPORTANT;">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo $page_title . ".php" ?>"> <?php echo $page_title ?> </a>
+          <a class="nav-link" href="<?php echo $page_title . ".php" ?>" style="color: #ffffff !IMPORTANT;"> <?php echo $page_title ?> </a>
         </li>
         <!--Aqui iran los demas departamentos-->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff !IMPORTANT;">
             Dropdown
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
