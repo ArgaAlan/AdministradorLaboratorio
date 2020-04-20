@@ -4,26 +4,26 @@
 $id = $_GET['id'] ?? '';
 
 if (strcmp($id, "") == 0) {
-    redirect_to("materiales.php");
+    redirect_to("reactivos.php");
 }
 
-$materiales = find_by_column("material", "codigo_barras", $id);
+$materiales = find_by_column("reactivos", "codigo_barras", $id);
 
 ?>
-<?php $page_title = 'Materiales'; ?>
+<?php $page_title = 'Reactivos'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 <!--INITIALIZE FOR THIS PAGE-->
 
 <?php
 if (array_key_exists('update', $_POST)) {
-    redirect_to("materiales_act.php?id=" . $id);
+    redirect_to("reactivos_act.php?id=" . $id);
 }
 ?>
 
 <?php
 if (array_key_exists('delete', $_POST)) {
-    delete("material", $id);
-    redirect_to("materiales.php");
+    delete("reactivos", $id);
+    redirect_to("reactivos.php");
 }
 function delete($table, $value)
 {
@@ -84,16 +84,16 @@ function delete($table, $value)
                 echo "<td>" . $material['marca'] . "</td>";
                 echo "</tr>";
                 echo "<tr class=\"table-secondary\">";
-                echo "<th>" . "Modelo" . "</th>";
-                echo "<td>" . $material['modelo'] . "</td>";
+                echo "<th>" . "Fecha de adquisición" . "</th>";
+                echo "<td>" . $material['fecha_adquisicion'] . "</td>";
                 echo "</tr>";
                 echo "<tr class=\"table-light\">";
-                echo "<th>" . "Especificaciones" . "</th>";
-                echo "<td>" . $material['especificaciones'] . "</td>";
-                echo "</tr>";
-                echo "<tr class=\"table-secondary\">";
                 echo "<th>" . "Indentificación Interna" . "</th>";
                 echo "<td>" . $material['identificacion_interna'] . "</td>";
+                echo "</tr>";
+                echo "<tr class=\"table-secondary\">";
+                echo "<th>" . "Hoja de Seguridad" . "</th>";
+                echo "<td>" . $material['hoja_seguridad'] . "</td>";
                 echo "</tr>";
                 echo "<tr class=\"table-light\">";
                 echo "<th>" . "Almacen" . "</th>";

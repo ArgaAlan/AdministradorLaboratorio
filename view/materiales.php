@@ -1,9 +1,9 @@
 <!--INITIALIZE FOR THIS PAGE-->
 <?php require_once('../functions/initialize.php'); ?>
 <?php
-$materiales = find_all("reactivos");
+$materiales = find_all("material");
 ?>
-<?php $page_title = 'Reactivos'; ?>
+<?php $page_title = 'Materiales'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 <!--INITIALIZE FOR THIS PAGE-->
 
@@ -12,7 +12,7 @@ $materiales = find_all("reactivos");
 
     <br>
     <center>
-        <h1>Lista de reactivos</h1>
+        <h1>Lista de materiales</h1>
     </center>
     <br>
 
@@ -38,7 +38,7 @@ $materiales = find_all("reactivos");
         <!-- Agregar material -->
         <div class="col">
             <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo material">Nuevo Reactivo</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo material">Nuevo Material</button>
             </form>
         </div>
     </div>
@@ -51,7 +51,7 @@ $materiales = find_all("reactivos");
         <table class="table">
 
             <tr class="table-primary">
-                <th>Reactivo</th>
+                <th>Material</th>
                 <th>Codigo de barras</th>
                 <th>Nombre</th>
                 <th>Info</th>
@@ -67,7 +67,7 @@ $materiales = find_all("reactivos");
                     echo "<td class=\"table-light\"><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
                     echo "<td class=\"table-light\">" . $material['codigo_barras'] . "</td>";
                     echo "<td class=\"table-light\">" . $material['nombre'] . "</td>";
-                    echo "<td class=\"table-light\"><a href=reactivos_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
+                    echo "<td class=\"table-light\"><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
                     echo "</tr>";
                     $row = 1;
                 } else {
@@ -75,7 +75,7 @@ $materiales = find_all("reactivos");
                     echo "<td class=\"table-secondary\"><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
                     echo "<td class=\"table-secondary\">" . $material['codigo_barras'] . "</td>";
                     echo "<td class=\"table-secondary\">" . $material['nombre'] . "</td>";
-                    echo "<td class=\"table-secondary\"><a href=reactivos_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
+                    echo "<td class=\"table-secondary\"><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
                     echo "</tr>";
                     $row = 0;
                 }

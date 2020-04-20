@@ -4,30 +4,30 @@
 $id = $_GET['id'] ?? '';
 
 if (strcmp($id, "") == 0) {
-    redirect_to("materiales.php");
+    redirect_to("reactivos.php");
 }
 
-$materiales = find_by_column("material", "codigo_barras", $id);
+$materiales = find_by_column("reactivos", "codigo_barras", $id);
 
 ?>
-<?php $page_title = 'Materiales'; ?>
+<?php $page_title = 'Reactivos'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 <!--INITIALIZE FOR THIS PAGE-->
 
 <?php
 if (array_key_exists('update', $_POST)) {
-    updateMat("material", "nombre", $_POST['nombre']);
-    updateMat("material", "foto", $_POST['url']);
-    updateMat("material", "marca", $_POST['marca']);
-    updateMat("material", "modelo", $_POST['modelo']);
-    updateMat("material", "especificaciones", $_POST['especificaciones']);
-    updateMat("material", "identificacion_interna", $_POST['identificacion_interna']);
-    updateMat("material", "almacen", $_POST['almacen']);
-    updateMat("material", "ubicacion", $_POST['ubicacion']);
-    updateMat("material", "proveedor", $_POST['proveedor']);
-    updateMat("material", "cantidad", $_POST['cantidad']);
-    updateMat("material", "observaciones", $_POST['observaciones']);
-    redirect_to("materiales.php");
+    updateMat("reactivos", "nombre", $_POST['nombre']);
+    updateMat("reactivos", "foto", $_POST['url']);
+    updateMat("reactivos", "marca", $_POST['marca']);
+    updateMat("reactivos", "fecha_adquisicion", $_POST['fecha']);
+    updateMat("reactivos", "identificacion_interna", $_POST['identificacion_interna']);
+    updateMat("reactivos", "hoja_seguridad", $_POST['hoja']);
+    updateMat("reactivos", "almacen", $_POST['almacen']);
+    updateMat("reactivos", "ubicacion", $_POST['ubicacion']);
+    updateMat("reactivos", "proveedor", $_POST['proveedor']);
+    updateMat("reactivos", "cantidad", $_POST['cantidad']);
+    updateMat("reactivos", "observaciones", $_POST['observaciones']);
+    redirect_to("reactivos.php");
 }
 function updateMat($table, $field, $value)
 {
@@ -78,27 +78,27 @@ function updateMat($table, $field, $value)
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col col-form-label">Marca</label>
+                <label class="col col-form-label">Marca:</label>
                 <div class="col">
                     <input class="form-control" name="marca" placeholder="Marca" value="<?php echo $material['marca'] ?>">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col col-form-label">Modelo:</label>
+                <label class="col col-form-label">Fecha de adquisición:</label>
                 <div class="col">
-                    <input class="form-control" name="modelo" placeholder="Modelo" value="<?php echo $material['modelo'] ?>">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col col-form-label">Especificaciones:</label>
-                <div class="col">
-                    <input class="form-control" name="especificaciones" placeholder="Especificaciones" value="<?php echo $material['especificaciones'] ?>">
+                    <input class="form-control" name="fecha" placeholder="Fecha" value="<?php echo $material['fecha_adquisicion'] ?>">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col col-form-label">Identificación Interna:</label>
                 <div class="col">
                     <input class="form-control" name="identificacion_interna" placeholder="Identificación Interna" value="<?php echo $material['identificacion_interna'] ?>">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col col-form-label">Hoja de seguridad:</label>
+                <div class="col">
+                    <input class="form-control" name="hoja" placeholder="Hoja de seguridad" value="<?php echo $material['hoja_seguridad'] ?>">
                 </div>
             </div>
             <div class="form-group row">

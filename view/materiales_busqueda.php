@@ -1,57 +1,56 @@
 <!--INITIALIZE FOR THIS PAGE-->
 <?php require_once('../functions/initialize.php'); ?>
 <?php
-$materiales = find_all("reactivos");
-?>
-<?php $page_title = 'Reactivos'; ?>
-<?php include(PAGES_PATH . '/staff_header.php'); ?>
-<!--INITIALIZE FOR THIS PAGE-->
+$table = "material";
+$codigo_barras = $_POST['codigo_barras'] ?? '';
+$nombre = $_POST['nombre'] ?? '';
+$busqueda = "";
 
+if (strcmp($nombre, '') != 0) {
+    $busqueda = "nombre";
+}
+
+if (strcmp($codigo_barras, '') != 0) {
+    $busqueda = "codigo_barras";
+}
+
+if (strcmp($busqueda, '') == 0) {
+    redirect_to("materiales.php");
+}
+
+
+?>
+<?php $page_title = 'Materiales'; ?>
+<?php include(PAGES_PATH . '/staff_header.php'); ?>
+
+<?php
+
+if (strcmp($busqueda, "nombre") == 0) {
+    $materiales = find_by_column("material", $busqueda, $nombre);
+}
+
+if (strcmp($busqueda, "codigo_barras") == 0) {
+    $materiales = find_by_column("material", $busqueda, $codigo_barras);
+}
+
+?>
+<!--INITIALIZE FOR THIS PAGE-->
 
 <div class="container">
 
     <br>
     <center>
-        <h1>Lista de reactivos</h1>
+        <h1>Lista de materiales</h1>
     </center>
     <br>
 
-    <!-- BOTONES -->
-    <div class="row">
-
-        <!-- Buscar por nombre -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Nombre" aria-label="Nombre" name="nombre">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-            </form>
-        </div>
-
-        <!-- Buscar por codigo -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Codigo de barras" aria-label="Codigo de barras" name="codigo_barras">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-            </form>
-        </div>
-
-        <!-- Agregar material -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo material">Nuevo Reactivo</button>
-            </form>
-        </div>
-    </div>
-    <!-- BOTONES -->
-
-    <br>
     <!-- TABLA -->
 
     <div class="row">
         <table class="table">
 
             <tr class="table-primary">
-                <th>Reactivo</th>
+                <th>Material</th>
                 <th>Codigo de barras</th>
                 <th>Nombre</th>
                 <th>Info</th>
@@ -67,7 +66,7 @@ $materiales = find_all("reactivos");
                     echo "<td class=\"table-light\"><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
                     echo "<td class=\"table-light\">" . $material['codigo_barras'] . "</td>";
                     echo "<td class=\"table-light\">" . $material['nombre'] . "</td>";
-                    echo "<td class=\"table-light\"><a href=reactivos_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
+                    echo "<td class=\"table-light\"><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
                     echo "</tr>";
                     $row = 1;
                 } else {
@@ -75,7 +74,7 @@ $materiales = find_all("reactivos");
                     echo "<td class=\"table-secondary\"><img src=\"" . $material['foto'] . "\" alt=\"Image\" height=\"42\" width=\"42\"></td>";
                     echo "<td class=\"table-secondary\">" . $material['codigo_barras'] . "</td>";
                     echo "<td class=\"table-secondary\">" . $material['nombre'] . "</td>";
-                    echo "<td class=\"table-secondary\"><a href=reactivos_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
+                    echo "<td class=\"table-secondary\"><a href=materiales_info.php?id=" . $material['codigo_barras'] . ">Más información</a></td>";
                     echo "</tr>";
                     $row = 0;
                 }
@@ -94,7 +93,9 @@ $materiales = find_all("reactivos");
     </div>
 
     <!-- TABLA -->
+
 </div>
+
 
 <!--INITIALIZE FOR THIS PAGE-->
 <?php include(PAGES_PATH . '/staff_footer.php'); ?>

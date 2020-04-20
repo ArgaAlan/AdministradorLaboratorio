@@ -1,21 +1,21 @@
 <!--INITIALIZE FOR THIS PAGE-->
 <?php require_once('../functions/initialize.php'); ?>
-<?php $page_title = 'Materiales'; ?>
+<?php $page_title = 'Reactivos'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 <!--INITIALIZE FOR THIS PAGE-->
 
 <?php
 if (array_key_exists('create', $_POST)) {
-    createMat("material", $_POST['codigo'], $_POST['nombre'], $_POST['url'], $_POST['marca'], $_POST['modelo'], $_POST['especificaciones'], $_POST['identificacion_interna'], $_POST['almacen'], $_POST['ubicacion'], $_POST['proveedor'], $_POST['cantidad'], $_POST['observaciones']);
-    redirect_to("materiales.php");
+    createMat("reactivos", $_POST['codigo'], $_POST['nombre'], $_POST['url'], $_POST['marca'], $_POST['fecha'], $_POST['identificacion_interna'], $_POST['hoja'], $_POST['almacen'], $_POST['ubicacion'], $_POST['proveedor'], $_POST['cantidad'], $_POST['observaciones']);
+    redirect_to("reactivos.php");
 }
-function createMat($table, $codigo, $nombre, $foto, $marca, $modelo, $especificaciones, $identificacion_interna, $almacen, $ubicacion, $proveedor, $cantidad, $observaciones)
+function createMat($table, $codigo, $nombre, $foto, $marca, $fecha, $identificacion_interna, $hoja, $almacen, $ubicacion, $proveedor, $cantidad, $observaciones)
 {
     global $db;
 
     $sql = "INSERT INTO " . $table . " ";
     //ESCRIBIR TODOS LOS VALORES 
-    $sql .= "VALUES (" . $codigo . ",\"" . $nombre . "\",\"" . $foto . "\",\"" . $marca . "\",\"" . $modelo . "\",\"" . $especificaciones . "\",\"" . $identificacion_interna . "\",\"" . $almacen . "\",\"" . $ubicacion . "\",\"" . $proveedor . "\",\"" . $cantidad . "\",\"" . $observaciones . "\")";
+    $sql .= "VALUES (" . $codigo . ",\"" . $nombre . "\",\"" . $foto . "\",\"" . $marca . "\",\"" . $fecha . "\",\"" . $identificacion_interna . "\",\"" . $hoja . "\",\"" . $almacen . "\",\"" . $ubicacion . "\",\"" . $proveedor . "\",\"" . $cantidad . "\",\"" . $observaciones . "\")";
     $result = mysqli_query($db, $sql);
     confirm_result_set($result);
     return $result;
@@ -49,27 +49,27 @@ function createMat($table, $codigo, $nombre, $foto, $marca, $modelo, $especifica
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col col-form-label">Marca</label>
+                <label class="col col-form-label">Marca:</label>
                 <div class="col">
                     <input class="form-control" name="marca" placeholder="Marca">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col col-form-label">Modelo:</label>
+                <label class="col col-form-label">Fecha de adquisición:</label>
                 <div class="col">
-                    <input class="form-control" name="modelo" placeholder="Modelo">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col col-form-label">Especificaciones:</label>
-                <div class="col">
-                    <input class="form-control" name="especificaciones" placeholder="Especificaciones">
+                    <input class="form-control" name="fecha" placeholder="Fecha">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col col-form-label">Identificación Interna:</label>
                 <div class="col">
                     <input class="form-control" name="identificacion_interna" placeholder="Identificación Interna">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col col-form-label">Hoja de seguridad:</label>
+                <div class="col">
+                    <input class="form-control" name="hoja" placeholder="Hoja de seguridad">
                 </div>
             </div>
             <div class="form-group row">
@@ -105,7 +105,6 @@ function createMat($table, $codigo, $nombre, $foto, $marca, $modelo, $especifica
             <button type="submit" name="create" class="btn btn-primary">Crear</button>
         </form>
     </div>
-
     <!--Formulario-->
 
 </div>
