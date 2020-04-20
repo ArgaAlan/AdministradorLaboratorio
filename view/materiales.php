@@ -1,7 +1,7 @@
 <!--INITIALIZE FOR THIS PAGE-->
 <?php require_once('../functions/initialize.php'); ?>
 <?php
-$materiales = find_all_materials();
+$materiales = find_all("material");
 ?>
 <?php $page_title = 'Materiales'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>

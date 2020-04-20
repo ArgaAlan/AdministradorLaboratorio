@@ -1,12 +1,40 @@
 <!--INITIALIZE FOR THIS PAGE-->
 <?php require_once('../functions/initialize.php'); ?>
 <?php
-$materiales = find_all("reactivos");
+$table = "reactivos";
+$codigo_barras = $_POST['codigo_barras'] ?? '';
+$nombre = $_POST['nombre'] ?? '';
+$busqueda = "";
+
+if (strcmp($nombre, '') != 0) {
+    $busqueda = "nombre";
+}
+
+if (strcmp($codigo_barras, '') != 0) {
+    $busqueda = "codigo_barras";
+}
+
+if (strcmp($busqueda, '') == 0) {
+    redirect_to("reactivos.php");
+}
+
+
 ?>
 <?php $page_title = 'Reactivos'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
-<!--INITIALIZE FOR THIS PAGE-->
 
+<?php
+
+if (strcmp($busqueda, "nombre") == 0) {
+    $materiales = find_by_column("reactivos", $busqueda, $nombre);
+}
+
+if (strcmp($busqueda, "codigo_barras") == 0) {
+    $materiales = find_by_column("reactivos", $busqueda, $codigo_barras);
+}
+
+?>
+<!--INITIALIZE FOR THIS PAGE-->
 
 <div class="container">
 
@@ -16,35 +44,6 @@ $materiales = find_all("reactivos");
     </center>
     <br>
 
-    <!-- BOTONES -->
-    <div class="row">
-
-        <!-- Buscar por nombre -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Nombre" aria-label="Nombre" name="nombre">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-            </form>
-        </div>
-
-        <!-- Buscar por codigo -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Codigo de barras" aria-label="Codigo de barras" name="codigo_barras">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-            </form>
-        </div>
-
-        <!-- Agregar material -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo material">Nuevo Reactivo</button>
-            </form>
-        </div>
-    </div>
-    <!-- BOTONES -->
-
-    <br>
     <!-- TABLA -->
 
     <div class="row">
@@ -94,7 +93,9 @@ $materiales = find_all("reactivos");
     </div>
 
     <!-- TABLA -->
+
 </div>
+
 
 <!--INITIALIZE FOR THIS PAGE-->
 <?php include(PAGES_PATH . '/staff_footer.php'); ?>

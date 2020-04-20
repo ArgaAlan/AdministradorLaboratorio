@@ -1,10 +1,10 @@
 <?php
 
-function find_all_materials()
+function find_all($tabla)
 {
   global $db;
 
-  $sql = "SELECT * FROM material ";
+  $sql = "SELECT * FROM " . $tabla . " ";
   $sql .= "ORDER BY nombre ASC";
   $result = mysqli_query($db, $sql);
   confirm_result_set($result);
