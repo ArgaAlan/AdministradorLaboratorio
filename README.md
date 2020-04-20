@@ -1,7 +1,7 @@
 # AdministradorLaboratorio
 A web page to administrate inventory, laboratories, etc. 
 
-This web works with a MySQL DB, at the momento it is not in the a server so in case you would like to tested follow the next commands
+This web works with a MySQL DB, at the moment it is not in the a server so in case you would like to tested follow the next commands
 for you MySQL localhost.
 
 CREATE DATABASE laboratorio;
