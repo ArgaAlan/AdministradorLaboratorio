@@ -13,18 +13,18 @@
 <body>
 
 
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar" style="background-color: #1B264F">
 
-    <img src="src/logo-removebg.png" width="170" height="50" class="d-inline-block align-top" alt="logo">
-    <h1 class="display-4">Laboratorios Medicina</h1>
-    <button class="btn btn-secondary btn-lg" type="button">Iniciar sesion </button>
+    <img src="src/logo.jpeg" width="170" height="50" class="d-inline-block align-top" alt="logo">
+    <h1 class="display-4 text-white">Laboratorios Medicina</h1>
+    <button class="btn btn-lg btn-outline-success" type="button">Iniciar sesion </button>
 
 </nav>
 
-<br><br>
+<br><br><br>
 <div class="container-fluid">
     <div class="row mx-auto">
-        <div class="col-sm-7 mx-auto">
+        <div class="col-7">
             <div class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active " data-interval="6000">
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="col-sm-4 mx-auto">
+        <div class="col-4">
             <div class="row">
                 <div class="col">
                     <div class="carousel slide" data-ride="carousel">
@@ -83,45 +83,45 @@
 
 <br><br><br>
 
-<div class="container-fluid ">
-    <div class="row row-cols-4 mx-auto">
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <a href="#" class="btn btn-secondary btn-lg" type="button" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">
-                    Fotos
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="mx-auto">
+                <a href="lab.php" class="btn btn-block btn-lg mx-auto text-white" type="button" style="margin: 10px 40px 10px 10px;background-color: #1B264F">
+                    Laboratorio
                 </a>
-                <a href="#" class=" text-dark">Laboratorio</a>
             </div>
         </div>
-
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <a href="#" class="btn btn-secondary btn-lg" type="button" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">
-                    Fotos
-                </a>
-                <a href="#" class=" text-dark">Equipo/Materiales</a>
+        <div class="col">
+            <div class="mx-auto">
+                <div class="dropup">
+                    <button type="button" class="btn btn-block btn-lg mx-auto text-white dropdown-toggle" style="margin: 10px 40px 10px 10px;background-color: #1B264F" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                        Equipo
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg-right">
+                        <a class="dropdown-item" href="view/consumibles.php">Consumibles</a>
+                        <a class="dropdown-item" href="view/equipo.php">Equipo</a>
+                        <a class="dropdown-item" href="view/materiales.php">Materiales</a>
+                        <a class="dropdown-item" href="view/proveedores.php">Proveedores</a>
+                        <a class="dropdown-item" href="view/reactivos.php">Reactivos</a>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <a href="#" class="btn btn-secondary btn-lg" type="button" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">
-                    Fotos
+        <div class="col">
+            <div class="mx-auto">
+                <a href="https://my.labagenda.com/" class="btn btn-block btn-lg mx-auto text-white" type="button" style="margin: 10px 40px 10px 10px;background-color: #1B264F">
+                    Reservaciones
                 </a>
-                <a href="#" class=" text-dark">Reservaciones</a>
             </div>
         </div>
-
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <a href="#" class="btn btn-secondary btn-lg" type="button" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">
-                    Fotos
+        <div class="col">
+            <div class="mx-auto">
+                <a href="contacto.php" class="btn btn-block btn-lg mx-auto text-white" type="button" style="margin: 10px 40px 10px 10px;background-color: #1B264F">
+                    Contacto
                 </a>
-
-                <a href="contacto.php" class="text-dark">Contacto</a>
             </div>
         </div>
-
     </div>
 </div>
 
