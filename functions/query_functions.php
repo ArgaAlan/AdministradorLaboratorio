@@ -11,6 +11,17 @@ function find_all($tabla)
   return $result;
 }
 
+function find_all_reportes()
+{
+  global $db;
+
+  $sql = "SELECT * FROM " . "reporte" . " ";
+  $sql .= "ORDER BY year ASC , month ASC, day ASC";
+  $result = mysqli_query($db, $sql);
+  confirm_result_set($result);
+  return $result;
+}
+
 function find_by_column($table, $column, $value)
 {
   global $db;
