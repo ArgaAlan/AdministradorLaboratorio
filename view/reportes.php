@@ -1,5 +1,8 @@
 <!--INITIALIZE FOR THIS PAGE-->
 <?php require_once('../functions/initialize.php'); ?>
+<?php require_once('../functions/pages/tags.php'); ?>
+<?php require_once('../functions/pages/inputs.php'); ?>
+<?php require_once('../functions/pages/tables.php'); ?>
 <?php
 $reportes = find_all_reportes();
 ?>
@@ -10,38 +13,19 @@ $reportes = find_all_reportes();
 
 <div class="container">
 
-    <br>
-    <center>
-        <h1>Lista de reportes</h1>
-    </center>
-    <br>
+    <?php title("reportes") ?>
 
     <!-- BOTONES -->
     <div class="row">
 
         <!-- Buscar por material -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Material" aria-label="Material" name="material">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-            </form>
-        </div>
+        <?php searchBy("reportes", "Material", "Buscar", "material", "Buscar") ?>
 
         <!-- Buscar por fecha -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Mes" aria-label="Mes" name="month">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-                <input class="form-control mr-sm-2" type="text" placeholder="Año" aria-label="Año" name="year">
-            </form>
-        </div>
+        <?php searchBy("reportes", "Mes", "Buscar", "month", "Buscar") ?>
 
         <!-- Agregar reporte -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo reporte">Nuevo reporte</button>
-            </form>
-        </div>
+        <?php addBy("reportes", "Nuevo reporte", "Nuevo reporte") ?>
     </div>
     <!-- BOTONES -->
 

@@ -1,5 +1,8 @@
 <!--INITIALIZE FOR THIS PAGE-->
 <?php require_once('../functions/initialize.php'); ?>
+<?php require_once('../functions/pages/tags.php'); ?>
+<?php require_once('../functions/pages/inputs.php'); ?>
+<?php require_once('../functions/pages/tables.php'); ?>
 <?php
 $materiales = find_all("reactivos");
 ?>
@@ -10,37 +13,19 @@ $materiales = find_all("reactivos");
 
 <div class="container">
 
-    <br>
-    <center>
-        <h1>Lista de reactivos</h1>
-    </center>
-    <br>
+    <?php title("reactivos") ?>
 
     <!-- BOTONES -->
     <div class="row">
 
         <!-- Buscar por nombre -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Nombre" aria-label="Nombre" name="nombre">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-            </form>
-        </div>
+        <?php searchBy("reactivos", "Nombre", "Buscar", "nombre", "Buscar") ?>
 
         <!-- Buscar por codigo -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_busqueda.php"; ?> method="post">
-                <input class="form-control mr-sm-2" type="text" placeholder="Codigo de barras" aria-label="Codigo de barras" name="codigo_barras">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">Buscar</button>
-            </form>
-        </div>
+        <?php searchBy("proveedores", "Codigo de barras", "Buscar", "codigo_barras", "Buscar") ?>
 
         <!-- Agregar material -->
-        <div class="col">
-            <form class="form-inline my-2 my-lg-0" action=<?php echo strtolower($page_title) . "_nuevo.php"; ?> method="post">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" value="Nuevo material">Nuevo Reactivo</button>
-            </form>
-        </div>
+        <?php addBy("reactivos", "Nuevo material", "Nuevo Reactivo") ?>
     </div>
     <!-- BOTONES -->
 

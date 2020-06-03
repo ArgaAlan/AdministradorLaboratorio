@@ -14,7 +14,14 @@ function searchBy($page, $place_holder, $value, $name, $btn_name)
 
 function addBy($page, $value, $btn_name)
 {
-    $user = $_POST['user'] ?? '';
+    $user = '';
+    if (isset($_POST["values"])) {
+        for ($i = 0; $i < count($_POST["values"]); $i++) {
+            if ($_POST["values"][$i] == "found") {
+                $user = "found";
+            }
+        }
+    }
     if ($user == "found") {
         echo " 
             <div class=\"col\">
