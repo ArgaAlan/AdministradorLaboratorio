@@ -3,9 +3,7 @@
 <?php require_once('../functions/pages/tags.php'); ?>
 <?php require_once('../functions/pages/inputs.php'); ?>
 <?php require_once('../functions/pages/tables.php'); ?>
-<?php
-$materiales = find_all("consumibles");
-?>
+<?php $materiales = find_all("consumibles"); ?>
 <?php $page_title = 'Consumibles'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 <!--INITIALIZE FOR THIS PAGE-->

@@ -14,11 +14,14 @@ function searchBy($page, $place_holder, $value, $name, $btn_name)
 
 function addBy($page, $value, $btn_name)
 {
-    echo " 
-        <div class=\"col\">
-            <form class=\"form-inline my-2 my-lg-0\" action={$page}_nuevo.php method=\"post\">
-                <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\" value=\"{$value}\">{$btn_name}</button>
-            </form>
-        </div>
-    ";
+    $user = $_POST['user'] ?? '';
+    if ($user == "found") {
+        echo " 
+            <div class=\"col\">
+                <form class=\"form-inline my-2 my-lg-0\" action={$page}_nuevo.php method=\"post\">
+                    <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\" value=\"{$value}\">{$btn_name}</button>
+                </form>
+            </div>
+        ";
+    }
 }
