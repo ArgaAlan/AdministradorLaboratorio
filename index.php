@@ -74,14 +74,6 @@
                 </a>
             </div>
         </div>
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <form action="view/materiales.php" method="post">
-                    <input type="hidden" name="values[]" value="<?php echo $user ?>">
-                    <button class="btn btn-secondary btn-lg" type="submit" value="user" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">Equipo/Materiales</button>
-                </form>
-            </div>
-        </div>
         <div class="col">
             <div class="mx-auto">
                 <a href="https://my.labagenda.com/" class="btn btn-block btn-lg mx-auto text-white" type="button" style="margin: 10px 40px 10px 10px;background-color: #1B264F">
