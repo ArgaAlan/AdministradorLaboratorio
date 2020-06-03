@@ -2,10 +2,11 @@
 <?php $page_title = 'Laboratorios de medicina'; ?>
 <?php include(PAGES_PATH . '/staff_header.php'); ?>
 
-<br><br>
+
+<br><br><br>
 <div class="container-fluid">
     <div class="row mx-auto">
-        <div class="col-sm-7 mx-auto">
+        <div class="col-7">
             <div class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active " data-interval="6000">
@@ -21,7 +22,7 @@
             </div>
         </div>
 
-        <div class="col-sm-4 mx-auto">
+        <div class="col-4">
             <div class="row">
                 <div class="col">
                     <div class="carousel slide" data-ride="carousel">
@@ -64,17 +65,15 @@
 
 <br><br><br>
 
-<div class="container-fluid ">
-    <div class="row row-cols-4 mx-auto">
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <a href="#" class="btn btn-secondary btn-lg" type="button" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">
-                    Fotos
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="mx-auto">
+                <a href="lab.php" class="btn btn-block btn-lg mx-auto text-white" type="button" style="margin: 10px 40px 10px 10px;background-color: #1B264F">
+                    Laboratorio
                 </a>
-                <a href="#" class=" text-dark">Laboratorio</a>
             </div>
         </div>
-
         <div class="col" style="font-size: 1.5em">
             <div class="border border-dark">
                 <form action="view/materiales.php" method="post">
@@ -83,23 +82,18 @@
                 </form>
             </div>
         </div>
-
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <a href="#" class="btn btn-secondary btn-lg" type="button" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">
-                    Fotos
+        <div class="col">
+            <div class="mx-auto">
+                <a href="https://my.labagenda.com/" class="btn btn-block btn-lg mx-auto text-white" type="button" style="margin: 10px 40px 10px 10px;background-color: #1B264F">
+                    Reservaciones
                 </a>
-                <a href="#" class=" text-dark">Reservaciones</a>
             </div>
         </div>
-
-        <div class="col" style="font-size: 1.5em">
-            <div class="border border-dark">
-                <a href="#" class="btn btn-secondary btn-lg" type="button" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">
-                    Fotos
+        <div class="col">
+            <div class="mx-auto">
+                <a href="contacto.php" class="btn btn-block btn-lg mx-auto text-white" type="button" style="margin: 10px 40px 10px 10px;background-color: #1B264F">
+                    Contacto
                 </a>
-
-                <a href="contacto.php" class="text-dark">Contacto</a>
             </div>
         </div>
     </div>

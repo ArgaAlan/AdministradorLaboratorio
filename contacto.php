@@ -8,19 +8,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Laboratorios de medicina</title>
+    <title>Contacto</title>
 </head>
 <body>
 
 
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar" style="background-color: #1B264F">
 
-    <img src="src/logo-removebg.png" width="170" height="50" class="d-inline-block align-top" alt="logo">
-    <h1 class="display-4">Laboratorios Medicina</h1>
-    <a class="btn btn-secondary btn-lg" type="button" href="index.php">Regresar a menú </a>
-
+    <img src="src/logo.jpeg" width="170" height="50" class="d-inline-block align-top" alt="logo">
+    <h1 class="display-4 text-white">Laboratorios Medicina</h1>
+    <a class="btn btn-lg btn-outline-success" type="button" href="index.php">Regresar a menú </a>
 
 </nav>
+
 <br><br>
 <div class="container-fluid">
     <p>
