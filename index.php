@@ -1,25 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php require_once('functions/initialize.php'); ?>
+<?php $page_title = 'Laboratorios de medicina'; ?>
+<?php include(PAGES_PATH . '/staff_header.php'); ?>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Laboratorios de medicina</title>
-</head>
-<body>
-
-
-<nav class="navbar" style="background-color: #1B264F">
-
-    <img src="src/logo.jpeg" width="170" height="50" class="d-inline-block align-top" alt="logo">
-    <h1 class="display-4 text-white">Laboratorios Medicina</h1>
-    <button class="btn btn-lg btn-outline-success" type="button">Iniciar sesion </button>
-
-</nav>
 
 <br><br><br>
 <div class="container-fluid">
@@ -28,7 +10,7 @@
             <div class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active " data-interval="6000">
-                            <img src="src/foto1.jpg" class="rounded mx-auto d-block" width="1024" height="650" alt="...">
+                        <img src="src/foto1.jpg" class="rounded mx-auto d-block" width="1024" height="650" alt="...">
                     </div>
                     <div class="carousel-item" data-interval="6000">
                         <img src="src/foto2.jpg" class="rounded mx-auto d-block" width="1024" height="650" alt="...">
@@ -92,20 +74,12 @@
                 </a>
             </div>
         </div>
-        <div class="col">
-            <div class="mx-auto">
-                <div class="dropup">
-                    <button type="button" class="btn btn-block btn-lg mx-auto text-white dropdown-toggle" style="margin: 10px 40px 10px 10px;background-color: #1B264F" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                        Equipo
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-lg-right">
-                        <a class="dropdown-item" href="view/consumibles.php">Consumibles</a>
-                        <a class="dropdown-item" href="view/equipo.php">Equipo</a>
-                        <a class="dropdown-item" href="view/materiales.php">Materiales</a>
-                        <a class="dropdown-item" href="view/proveedores.php">Proveedores</a>
-                        <a class="dropdown-item" href="view/reactivos.php">Reactivos</a>
-                    </div>
-                </div>
+        <div class="col" style="font-size: 1.5em">
+            <div class="border border-dark">
+                <form action="view/materiales.php" method="post">
+                    <input type="hidden" name="values[]" value="<?php echo $user ?>">
+                    <button class="btn btn-secondary btn-lg" type="submit" value="user" style="margin-bottom: 10px;margin-top: 10px;margin-right: 40px;margin-left: 10px;">Equipo/Materiales</button>
+                </form>
             </div>
         </div>
         <div class="col">
@@ -130,5 +104,5 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+
+<?php include(PAGES_PATH . '/staff_footer.php'); ?>

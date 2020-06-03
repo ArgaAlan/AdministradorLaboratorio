@@ -2,6 +2,15 @@
 if (!isset($page_title)) {
   $page_title = 'Laboratorios medicina';
 }
+$user = '';
+if (isset($_POST["values"])) {
+  for ($i = 0; $i < count($_POST["values"]); $i++) {
+    if ($_POST["values"][$i] == "found") {
+      $user = "found";
+    }
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -33,18 +42,44 @@ if (!isset($page_title)) {
         <!--Aqui iran los demas departamentos-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff !IMPORTANT;">
-            Dropdown
+            Sitios
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <form action="consumibles.php" method="post">
+              <input type="hidden" name="values[]" value="<?php echo $user ?>">
+              <button class="dropdown-item" type="submit" value="user">Consumibles</button>
+            </form>
+            <form action="materiales.php" method="post">
+              <input type="hidden" name="values[]" value="<?php echo $user ?>">
+              <button class="dropdown-item" type="submit" value="user">Materiales</button>
+            </form>
+            <form action="equipo.php" method="post">
+              <input type="hidden" name="values[]" value="<?php echo $user ?>">
+              <button class="dropdown-item" type="submit" value="user">Equipo</button>
+            </form>
+            <form action="proveedores.php" method="post">
+              <input type="hidden" name="values[]" value="<?php echo $user ?>">
+              <button class="dropdown-item" type="submit" value="user">Proveedores</button>
+            </form>
+            <form action="reactivos.php" method="post">
+              <input type="hidden" name="values[]" value="<?php echo $user ?>">
+              <button class="dropdown-item" type="submit" value="user">Reactivos</button>
+            </form>
+            <form action="reportes.php" method="post">
+              <input type="hidden" name="values[]" value="<?php echo $user ?>">
+              <button class="dropdown-item" type="submit" value="user">Resportes</button>
+            </form>
           </div>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Iniciar Sesion</button>
-      </form>
+      <?php
+      if ($page_title != 'Inicio de sesion' && $user != "found")
+        echo "
+          <form class=\"form-inline my-2 my-lg-0\" action=login.php method=\"post\">
+            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Iniciar Sesion</button>
+          </form>
+        ";
+      ?>
+
     </div>
   </nav>
