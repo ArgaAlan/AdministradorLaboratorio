@@ -38,20 +38,6 @@ VALUES (2525,
 	"observaciones");
 
 INSERT INTO material
-VALUES (2523,
-	"Probeta",
-	"https://www.instrumentodelaboratorio.info/wp-content/uploads/2019/09/probeta.jpg",
-	"marca",
-	"modelo",
-	"especificaciones",
-	"1",
-	"almacen",
-	"ubicacion",
-	"proveedor",
-	"12",
-	"observaciones");
-
-INSERT INTO material
 VALUES (2523, "Probeta","https://www.instrumentodelaboratorio.info/wp-content/uploads/2019/09/probeta.jpg","modelo","especificaciones",1,"almacen","ubicacion","proveedor",12,"observaciones");
 
 
